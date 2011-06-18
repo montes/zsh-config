@@ -81,8 +81,7 @@ setopt PROMPT_SUBST
             GITLASTCOMMIT=''
         fi
 
-        PROMPT="
-%{${fg[magenta]}%}$gitbranch%n@${at_underl}%m${at_underloff}${fg_dgray}[${fg_cyan}%~${fg_dgray}]${fg_pink}$GITBRANCHSHA1$GITLASTCOMMIT
+        PROMPT="%{${fg[magenta]}%}$gitbranch%n@${at_underl}%m${at_underloff}${fg_dgray}[${fg_cyan}%~${fg_dgray}]${fg_pink}$GITBRANCHSHA1$GITLASTCOMMIT
 %{${fg[blue]}%}%T${fg_dgray}$GITBRANCH$GITCOMMITPENDING:${at_normal} "
     }
 
