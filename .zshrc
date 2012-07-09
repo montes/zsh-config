@@ -6,7 +6,14 @@
 #
 
 # This is to force Ubuntu's VIM to load my own config
-export VIM='~/.vim/'
+###export VIM='~/.vim/'
+
+# For MacPorts:
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+#Home/End keys in OSX command line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # Load colors
 autoload -U colors
@@ -86,11 +93,13 @@ setopt PROMPT_SUBST
     }
 
 #Set the auto completion on
-autoload -U compinit
+autoload -Uz compinit
 compinit
-    
+
+zstyle ':completion:*' special-dirs true
+
 #Lets set some options
-setopt correctall
+####setopt correctall  #Very annoying auto complete
 setopt autocd
 setopt auto_resume
      
@@ -107,7 +116,7 @@ SAVEHIST=1000
         
 #Aliases
 ##ls, the common ones I use a lot shortened for rapid fire usage
-alias ls='ls --color' #I like color
+alias ls='ls -G' #I like color
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
